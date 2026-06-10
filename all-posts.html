@@ -12,7 +12,13 @@ permalink: /all-posts.html
   <ul>
     {% for post in year.items %}
       <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}">
+          {% if post.title and post.title != "" and post.title != "post" and post.title != "Untitled Post" %}
+            {{ post.title }}
+          {% else %}
+            پست بدون عنوان - {{ post.date | date: "%Y/%m/%d" }}
+          {% endif %}
+        </a>
         <small>({{ post.date | date: "%Y/%m/%d" }})</small>
       </li>
     {% endfor %}
