@@ -1,0 +1,11 @@
+# .gitignore
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile
+Gemfile.lock
+vendor/
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,34 @@
+# _config.yml
+title: "گاه‌نوشت‌های یک زریر"
+description: "وبلاگ شخصی"
+author: "زریر"
+baseurl: ""
+url: "https://javanmardx.github.io"
+
+# تنظیمات
+encoding: UTF-8
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# تنظیمات تاریخ
+timezone: Asia/Tehran
+
+# تم
+theme: minima
+
+# پلاگین‌ها
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# پشتیبانی از فارسی
+lang: fa-IR
+
+# تنظیمات پست‌ها
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      permalink: /:year/:month/:day/:title/
