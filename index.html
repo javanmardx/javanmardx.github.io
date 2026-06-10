@@ -1,0 +1,38 @@
+    ---
+    layout: home # یا default اگر home.html نداری
+    title: خانه
+    pagination:
+      enabled: true # فعال کردن صفحه‌بندی
+      per_page: 10 # تعداد پست در هر صفحه (می‌تونی این عدد رو تغییر بدی)
+    ---
+
+    ## گاه‌نوشت‌های یک زریر
+
+    از 1385 تا هنوز.
+
+    ### آخرین پست‌ها
+
+    <ul>
+    {% for post in paginator.posts %} {# این خط را جایگزین کن #}
+      <li>
+        <strong>{{ post.date | date: "%Y/%m/%d" }}</strong> -
+        <a href="{{ post.url }}">
+          {% if post.title and post.title != "" and post.title != "post" and post.title != "Untitled Post" %}
+            {{ post.title }}
+          {% else %}
+            پست بدون عنوان
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      <a {% if paginator.previous_page %}href="{{ paginator.previous_page_path | relative_url }}"{% else %}disabled{% endif %} class="previous_page">← قبلی</a>
+      <span class="page_number">صفحه {{ paginator.page }} از {{ paginator.total_pages }}</span>
+      <a {% if paginator.next_page %}href="{{ paginator.next_page_path | relative_url }}"{% else %}disabled{% endif %} class="next_page">بعدی →</a>
+    </div>
+    {% endif %}
+
+    <p><a href="{{ '/all-posts.html' | relative_url }}">مشاهده همه پست‌ها</a></p>
