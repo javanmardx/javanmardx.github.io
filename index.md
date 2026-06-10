@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: خانه
 ---
 
@@ -12,16 +12,16 @@ title: خانه
 <ul>
 {% for post in site.posts limit:10 %}
   <li>
-    <a href="{{ post.url | relative_url }}">
+    <strong>{{ post.date | date: "%Y/%m/%d" }}</strong> -
+    <a href="{{ post.url }}">
       {% if post.title and post.title != "" and post.title != "post" and post.title != "Untitled Post" %}
         {{ post.title }}
       {% else %}
-        پست بدون عنوان - {{ post.date | date: "%Y/%m/%d" }}
+        پست بدون عنوان
       {% endif %}
     </a>
-    <small>({{ post.date | date: "%Y/%m/%d" }})</small>
   </li>
 {% endfor %}
 </ul>
 
-[مشاهده همه پست‌ها]({{ '/all-posts.html' | relative_url }})
+<p><a href="{{ '/all-posts.html' | relative_url }}">مشاهده همه پست‌ها</a></p>
