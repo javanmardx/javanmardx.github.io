@@ -1,0 +1,62 @@
+---
+layout: page
+
+---
+
+<div class="last-posts">
+  {% comment %}
+    اینجا یک شرط هوشمندانه گذاشتم: اگر صفحه‌بندی فعال بود از paginator و اگر نبود از site.posts استفاده کن
+  {% endcomment %}
+  {% assign posts_to_show = paginator.posts | default: site.posts %}
+  
+  {% for post in posts_to_show limit:10 %}
+    <article style="margin-bottom: 60px; border-bottom: 1px solid #eee; padding-bottom: 30px; direction: rtl;">
+      
+      <h2 style="margin-bottom: 10px;">
+        <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0056b3;">
+          {% if post.title and post.title != "" %}
+            {{ post.title }}
+          {% else %}
+            پست بدون عنوان
+          {% endif %}
+        </a>
+      </h2>
+
+      <div class="post-meta" style="color: #999; font-size: 0.85em; margin-bottom: 15px;">
+        تاریخ انتشار: {{ post.date | date: "%Y/%m/%d" }}
+      </div>
+
+      <div class="post-content" style="line-height: 1.8; text-align: justify;">
+        {{ post.content }}
+      </div>
+
+    </article>
+  {% endfor %}
+</div>
+
+<!-- بخش صفحه‌بندی -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination" style="text-align: center; margin-bottom: 40px; direction: rtl; font-family: Tahoma;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" style="padding: 8px 15px; border: 1px solid #ddd; text-decoration: none; border-radius: 5px;">« قبلی</a>
+  {% else %}
+    <span style="padding: 8px 15px; border: 1px solid #eee; color: #ccc; border-radius: 5px;">« قبلی</span>
+  {% endif %}
+
+  <span style="margin: 0 15px;">
+    صفحه {{ paginator.page }} از {{ paginator.total_pages }}
+  </span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" style="padding: 8px 15px; border: 1px solid #ddd; text-decoration: none; border-radius: 5px;">بعدی »</a>
+  {% else %}
+    <span style="padding: 8px 15px; border: 1px solid #eee; color: #ccc; border-radius: 5px;">بعدی »</span>
+  {% endif %}
+</div>
+{% endif %}
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="/all-posts.html" style="padding: 10px 20px; background: #f8f8f8; border: 1px solid #eee; border-radius: 5px; text-decoration: none; color: #666; font-size: 0.9em;">
+    مشاهده همه پست‌ها در آرشیو
+  </a>
+</div>

@@ -1,0 +1,20 @@
+<header class="site-header">
+  <!-- اضافه کردن لینک فونت و CSS در صورتی که در جای دیگر تعریف نشده باشند -->
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+  <div class="wrapper">
+    <!-- عنوان سایت: چسبیده به راست -->
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      {{ site.title | default: "گاه‌نوشت‌های یک زریر" }}
+    </a>
+
+    <!-- منوی ناوبری: چسبیده به چپ -->
+    <nav class="site-nav">
+      <div class="trigger">
+        <a class="page-link" href="{{ '/' | relative_url }}">خانه</a>
+        <a class="page-link" href="{{ '/all-posts.html' | relative_url }}">بایگانی وبلاگ</a>
+      </div>
+    </nav>
+  </div>
+</header>

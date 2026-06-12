@@ -1,20 +1,30 @@
 ---
-layout: page
-title: همه پست‌ها
+layout: default
+title: بایگانی وبلاگ
 permalink: /all-posts.html
 ---
 
-<h1>آرشیو کامل پست‌ها</h1>
+<div class="archive-page">
+  <h1 class="page-heading">بایگانی نوشته‌ها</h1>
 
-{% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
-{% for year in posts_by_year %}
-  <h2>{{ year.name }}</h2>
-  <ul>
-    {% for post in year.items %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <small>({{ post.date | date: "%Y/%m/%d" }})</small>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <div class="year-section">
+      <h2 class="year-title">{{ year.name }}</h2>
+      <ul class="post-list-archive">
+        {% for post in year.items %}
+          <li>
+            <span class="post-date">{{ post.date | date: "%Y/%m/%d" }}</span>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {% if post.title and post.title != "" %}
+                {{ post.title }}
+              {% else %}
+                نوشته‌ی بدون عنوان
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

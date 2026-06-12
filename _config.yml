@@ -32,3 +32,14 @@ defaults:
     values:
       layout: "post"
       permalink: /:year/:month/:day/:title/
+      
+# اضافه کردن پلاگین صفحه‌بندی
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate  # <-- این خط حتماً اضافه شود
+
+# تنظیمات صفحه‌بندی
+paginate: 10
+paginate_path: "/page/:num/"
+

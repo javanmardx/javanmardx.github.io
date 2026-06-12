@@ -1,0 +1,163 @@
+/* تنظیم کل صفحه به راست‌به‌چپ با فونت وزیر */
+html, body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+  font-weight: 400;
+}
+
+/* درشت کردن عناوین برای زیبایی بیشتر */
+h1, h2, h3, h4, .site-title {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+  font-weight: 700;
+}
+
+/* جابه‌جایی منو به سمت چپ */
+.site-nav {
+  float: left !important;
+}
+
+/* اصلاح فاصله لیست‌ها */
+ul, ol {
+  margin-right: 25px;
+  margin-left: 0;
+  padding-right: 0;
+}
+
+/* اصلاح جهت فوتر */
+.footer-col-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* برای اینکه لینک‌های منو هم فونت بگیرند */
+.page-link {
+  font-family: 'Vazirmatn', sans-serif;
+}
+.site-title {
+  float: right !important;
+  padding-top: 10px;
+}
+
+.site-nav {
+  float: left !important;
+  line-height: 54px;
+}
+
+.page-link {
+  margin-left: 0 !important;
+  margin-right: 20px; /* ایجاد فاصله بین خانه و بایگانی */
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+/* برای اینکه در موبایل هم قاطی نکند */
+@media screen and (max-width: 600px) {
+  .site-title, .site-nav {
+    float: none !important;
+    text-align: center;
+  }
+}
+
+/* پاکسازی کامل استایل‌های کد برای تبدیل به متن عادی */
+.post-content pre, 
+.post-content code, 
+.highlight, 
+.highlighter-rouge .highlight {
+    background: transparent !important;
+    border: none !important;
+    color: #222 !important; /* رنگ متن تیره برای خوانایی بهتر */
+    font-family: 'Vazirmatn', sans-serif !important;
+    font-size: 1.1rem !important; /* کمی درشت‌تر برای راحتی چشم */
+    line-height: 1.8 !important;   /* فاصله خطوط مناسب برای متن فارسی */
+    padding: 0 !important;
+    margin: 0 !important;
+    white-space: normal !important; /* تبدیل رفتار کد به متن عادی برای حذف فضاها */
+    text-align: justify !important; /* مرتب کردن دو طرف متن */
+    display: block !important;      /* تبدیل به بلاک برای کنترل کامل تراز */
+    direction: rtl !important;
+}
+
+/* حذف فضاها و حاشیه‌های اضافی که خودِ جکیل به باکس‌های هایلایت می‌دهد */
+.highlighter-rouge, .highlight {
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
+}
+
+/* هدف قرار دادن مستقیم محتوای متنی داخل تگ pre */
+.post-content pre {
+    word-break: break-word !important;
+}
+/* --- استایل‌های صفحه بایگانی --- */
+.archive-page {
+  direction: rtl;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.archive-page .page-heading {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.year-title {
+  background: #fdfdfd;
+  padding: 8px 15px;
+  border-right: 5px solid #2a7ae2; /* نوار آبی کنار سال */
+  margin: 40px 0 20px 0;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.post-list-archive {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list-archive li {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f1f1f1;
+  transition: background 0.3s ease;
+}
+
+.post-list-archive li:hover {
+  background-color: #fafafa; /* هایلایت ملایم وقتی موس روی ردیف می‌رود */
+}
+
+.post-date {
+  min-width: 100px;
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: 25px; /* فاصله تاریخ از عنوان */
+  font-family: 'Vazirmatn', sans-serif;
+  font-weight: 300;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #2a7ae2 !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.post-link:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* بهینه سازی برای موبایل */
+@media screen and (max-width: 600px) {
+  .post-list-archive li {
+    flex-direction: column; /* در موبایل تاریخ بالای عنوان بیاید */
+    align-items: flex-start;
+  }
+  .post-date {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}
