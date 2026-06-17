@@ -93,6 +93,8 @@ html, body {
 }
 .post-content h2, .post-title {
 	font-size: 1.5rem;
+	font-weight:500 !important;
+	letter-spacing: -1px;
 }
 
 .post-content img {
