@@ -120,3 +120,45 @@ html, body {
     margin-bottom: 5px;
   }
 }
+
+/* contact form */
+
+.contact-form{
+  max-width:600px;
+  margin:40px auto;
+  direction:rtl;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  font-family:'Vazirmatn', sans-serif;
+  font-size:1rem;
+  border:1px solid #ddd;
+  border-radius:6px;
+  text-align:right;
+}
+
+.contact-form textarea{
+  line-height:1.8;
+}
+
+.contact-form button{
+  background:#2a7ae2;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:6px;
+  cursor:pointer;
+  font-family:'Vazirmatn', sans-serif;
+}
+
+.contact-form button:hover{
+  background:#1c5ec0;
+}
+
+.hidden-field{
+  display:none;
+}
