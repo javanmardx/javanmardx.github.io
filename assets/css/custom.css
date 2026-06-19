@@ -8,7 +8,7 @@ html, body {
   color: #333;
 }
 
-/* ۲. هدر و منو (بدون تغییر نسبت به قبل) */
+/* ۲. هدر و منو  */
 .site-header { border-bottom: 1px solid #e8e8e8; padding: 15px 0; }
 .site-title { float: right !important; font-size: 1.7rem !important; font-weight: 700 !important; }
 .site-nav { float: left !important; }
