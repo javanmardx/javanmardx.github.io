@@ -1,0 +1,22 @@
+---
+layout: page
+title: تگ‌ها
+permalink: /tags/
+---
+
+<div class="tags-page" style="direction: rtl; text-align: right; font-family: 'Vazirmatn', sans-serif;">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    <h3 id="{{ tag[0] }}" style="border-bottom: 1px solid #ccc; padding-bottom: 5px;">
+      {{ tag[0] }} <small>({{ tag[1].size }} پست)</small>
+    </h3>
+    <ul>
+      {% for post in tag[1] %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small dir="ltr">({{ post.date | date: "%Y/%m/%d" }})</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
