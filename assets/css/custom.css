@@ -121,44 +121,65 @@ html, body {
   }
 }
 
-/* contact form */
+/* contact form - نسخه بهینه و ایمن برای موبایل */
 
-.contact-form{
-  max-width:600px;
-  margin:40px auto;
-  direction:rtl;
+.contact-form {
+  max-width: 600px;
+  /* عرض را ۹۲ درصد گذاشتیم تا در موبایل از هر طرف کمی فاصله داشته باشد */
+  width: 92%; 
+  margin: 40px auto;
+  direction: rtl;
 }
 
 .contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-  font-family:'Vazirmatn', sans-serif;
-  font-size:1rem;
-  border:1px solid #ddd;
-  border-radius:6px;
-  text-align:right;
+.contact-form textarea {
+  /* عرض ۱۰۰ درصدِ نسبت به والد (که خودش ۹۲ درصد است) */
+  width: 100%;
+  padding: 12px; /* کمی پدینگ بیشتر برای راحتی تایپ در موبایل */
+  margin-bottom: 15px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* گوشه‌های کمی نرم‌تر */
+  text-align: right;
+  /* رعایت محاسبات عرض داخلی */
+  box-sizing: border-box; 
+  /* حذف استایل‌های پیش‌فرض موبایل که گاهی باعث باگ می‌شوند */
+  -webkit-appearance: none;
 }
 
-.contact-form textarea{
-  line-height:1.8;
+.contact-form textarea {
+  line-height: 1.8;
+  min-height: 150px;
+  max-width: 100%;
+  resize: vertical; /* فقط اجازه تغییر ارتفاع به کاربر می‌دهد تا عرض به هم نخورد */
 }
 
-.contact-form button{
-  background:#2a7ae2;
-  color:#fff;
-  border:none;
-  padding:10px 20px;
-  border-radius:6px;
-  cursor:pointer;
-  font-family:'Vazirmatn', sans-serif;
+.contact-form button {
+  background: #2a7ae2;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  font-weight: 500;
+  /* در موبایل عرض دکمه را کامل می‌کنیم تا راحت‌تر لمس شود */
+  width: 100%; 
+  box-sizing: border-box;
 }
 
-.contact-form button:hover{
-  background:#1c5ec0;
+/* در دسکتاپ (صفحات بزرگتر از 600 پیکسل) دکمه دوباره به حالت کوچک برگردد */
+@media screen and (min-width: 601px) {
+  .contact-form button {
+    width: auto;
+  }
 }
 
-.hidden-field{
-  display:none;
+.contact-form button:hover {
+  background: #1c5ec0;
+}
+
+.hidden-field {
+  display: none;
 }
